@@ -209,6 +209,8 @@ class XRayImageDataset:
         """
         loop over the nested subfolders + load images. 
         """
+        print("get dirs")
+        print(get_directories(BASE_IMAGE_DATA_DIR))
         for timepoint_dir in get_directories(BASE_IMAGE_DATA_DIR):
             if timepoint_dir not in IMAGE_TIMEPOINT_DIRS_TO_FOLLOWUP:
                 continue
