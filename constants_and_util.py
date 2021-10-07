@@ -318,7 +318,7 @@ def make_train_val_test_hold_out_set(seed_to_further_shuffle_train_test_val_sets
 
     # make sure the ids are in the same order as before (random seeds are the same). 
     shuffled_id_path = os.path.join(BASE_NON_IMAGE_DATA_DIR, 'shuffled_ids.pkl')
-    #pickle.dump(ids, open(shuffled_id_path, 'wb'))
+    pickle.dump(ids, open(shuffled_id_path, 'wb'))
     previously_cached_ids = pickle.load(open(shuffled_id_path, 'rb'))
     assert ids == previously_cached_ids
 
