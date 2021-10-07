@@ -1309,7 +1309,7 @@ if __name__ == '__main__':
     from traceback import print_exc
     import argparse
 
-    print("started0")
+    print("started0", file = sys.stderr)
     parser = argparse.ArgumentParser()
     args = sys.argv
 
@@ -1336,7 +1336,7 @@ if __name__ == '__main__':
                         seed_to_further_shuffle_train_test_val_sets=seed_to_further_shuffle_train_test_val_sets, 
                         crop_to_just_the_knee=str2bool(args.crop_to_just_the_knee))
     else:
-        print("started")
+        print("started", file = sys.stderr)
         image_dataset = XRayImageDataset(reprocess_all_images=True, show_both_knees_in_each_image=True, crop_to_just_the_knee=False, **IMAGE_DATASET_KWARGS)
         # DEPRECATED COMMENTS. 
         # Step 1: clear out old images on /dfs.
