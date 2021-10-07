@@ -914,7 +914,7 @@ def write_out_individual_images_for_one_dataset(write_out_image_data,
             for i in range(len(combined_df)):
                 image_path = os.path.join(base_path, 'image_%i.npy' % i)
                 np.save(image_path, matched_images[i])
-                print("%s image %i/%i written out to %s" % (dataset, i + 1, len(combined_df), image_path))
+                print("%s image %i/%i written out to %s" % (dataset, i + 1, len(combined_df), image_path), flush=True)
     print("Successfully wrote out all images.")
 
 def write_out_image_datasets_in_parallel():

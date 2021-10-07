@@ -71,7 +71,7 @@ else:
     REPROCESS_RAW_DATA = True # set this to False if you just want to work with the processed data, and don't need to reprocess it. 
     
     # Please set these paths for your system. 
-    INDIVIDUAL_IMAGES_PATH = '../oai36m/' # points to the directory which stores the processed data, so you should download the processed data into this folder. If you are reprocessing the raw data, the individual images will be stored in this folder. 
+    INDIVIDUAL_IMAGES_PATH = '../oai36m/results/processed_image_data/' # points to the directory which stores the processed data, so you should download the processed data into this folder. If you are reprocessing the raw data, the individual images will be stored in this folder. 
     FITTED_MODEL_DIR = '../oai36m_fittedmodels' # This is where you store the fitted models.  Please create three empty subdirectories in this directory: "configs", "results", and "model_weights". 
     
     # Only need to set these paths if you are reprocessing raw data. 
