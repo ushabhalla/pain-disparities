@@ -209,8 +209,8 @@ class XRayImageDataset:
         """
         loop over the nested subfolders + load images. 
         """
-        print("get dirs")
-        print(get_directories(BASE_IMAGE_DATA_DIR))
+        print("get dirs", flush=True)
+
         for timepoint_dir in get_directories(BASE_IMAGE_DATA_DIR):
             if timepoint_dir not in IMAGE_TIMEPOINT_DIRS_TO_FOLLOWUP:
                 continue
@@ -223,7 +223,7 @@ class XRayImageDataset:
             for cohort_folder in get_directories(base_dir_for_timepoint):
                 # A value of "C" for letter [X] indicates that the images are from participants are in the initial 2686 participants in Group C of the OAI cohort, 
                 # and a value of "E" represents the remaining 2110 participants from the cohort.
-                print(cohort_folder)
+                print(cohort_folder, flush=True)
                 if timepoint_dir in ['18m']:
                     assert cohort_folder.split('.')[1] in ['D']
                     assert len(get_directories(base_dir_for_timepoint)) == 1
