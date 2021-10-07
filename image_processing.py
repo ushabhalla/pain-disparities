@@ -1315,7 +1315,7 @@ if __name__ == '__main__':
     def str2bool(x):
         assert x in ['True', 'False']
         return x == 'True'
-
+    
     if len(sys.argv) > 1:
         parser.add_argument('--write_out_image_data', type=str)
         parser.add_argument('--normalization_method', type=str)
@@ -1335,6 +1335,7 @@ if __name__ == '__main__':
                         seed_to_further_shuffle_train_test_val_sets=seed_to_further_shuffle_train_test_val_sets, 
                         crop_to_just_the_knee=str2bool(args.crop_to_just_the_knee))
     else:
+        print("started")
         image_dataset = XRayImageDataset(reprocess_all_images=True, show_both_knees_in_each_image=True, crop_to_just_the_knee=False, **IMAGE_DATASET_KWARGS)
         # DEPRECATED COMMENTS. 
         # Step 1: clear out old images on /dfs.
