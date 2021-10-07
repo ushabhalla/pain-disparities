@@ -1127,6 +1127,7 @@ class NonImageData():
 
 
         # Gender + race + site. 
+        ### USHA BHANGED: CREATE GENERAL_ASCII FOLDER
         enrollees_path = os.path.join(BASE_NON_IMAGE_DATA_DIR, 'General_ASCII')
         self.load_all_text_files_in_directory(enrollees_path, datasets_to_skip=[])
         race_sex_site = copy.deepcopy(self.original_dataframes['enrollees'][['id', 'p02hisp', 'p02race', 'p02sex', 'v00site']])
