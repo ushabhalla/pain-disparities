@@ -1309,6 +1309,7 @@ if __name__ == '__main__':
     from traceback import print_exc
     import argparse
 
+    print("started0")
     parser = argparse.ArgumentParser()
     args = sys.argv
 
