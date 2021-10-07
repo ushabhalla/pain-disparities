@@ -337,7 +337,7 @@ def make_train_val_test_hold_out_set(seed_to_further_shuffle_train_test_val_sets
     assert sorted(results['train_ids'] + results['val_ids'] + results['test_ids'] + results['BLINDED_HOLD_OUT_DO_NOT_USE_ids']) == sorted(ids)
     
     blinded_hold_out_set_path = os.path.join(BASE_NON_IMAGE_DATA_DIR, 'blinded_hold_out_set_ids.pkl')
-    #pickle.dump(results['BLINDED_HOLD_OUT_DO_NOT_USE_ids'], open(blinded_hold_out_set_path, 'wb'))
+    pickle.dump(results['BLINDED_HOLD_OUT_DO_NOT_USE_ids'], open(blinded_hold_out_set_path, 'wb'))
     previously_cached_hold_out_set_ids = pickle.load(open(blinded_hold_out_set_path, 'rb'))
     assert results['BLINDED_HOLD_OUT_DO_NOT_USE_ids'] == previously_cached_hold_out_set_ids
     for k in results:
