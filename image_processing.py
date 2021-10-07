@@ -174,7 +174,7 @@ class XRayImageDataset:
                         self.images[i]['%s_knee_scaled_to_zero_one' % side] = cv2.resize(self.images[i]['%s_knee_scaled_to_zero_one' % side],
                          dsize=tuple(new_shape))
             self.diacom_image_statistics = reloaded_data['image_statistics']
-            print("Image statistics are", reloaded_data['image_statistics'])
+            print("Image statistics are", reloaded_data['image_statistics'], flush=True)
             self.make_images_RGB_and_zscore() # z-score. The reason we do this AFTER processing is that we don't want to save the image 3x. 
             #self.plot_pipeline_examples(25) # make sanity check plots
             print("Successfully loaded %i images" % len(self.images))
@@ -466,7 +466,7 @@ class XRayImageDataset:
         Normalize each image by z-scoring. 
         Checked. 
         """
-        print("Computing normalized images")
+        print("Computing normalized images", flush=True)
         assert self.normalization_method in ['imagenet_statistics', 'our_statistics', 'zscore_individually']
         
         def normalize_array(arr, mean_to_use, std_to_use):
